@@ -6,7 +6,7 @@ interface CreateGoalRequest {
     desiredWeeklyFrequency: number
 }
 
-export default async function createGoals({title,desiredWeeklyFrequency} : CreateGoalRequest){
+export default async function createGoal({title,desiredWeeklyFrequency} : CreateGoalRequest){
     const res=await db.insert(goals).values({ title, desiredWeeklyFrequency}).returning()
 
     const goal=res[0]
